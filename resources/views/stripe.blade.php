@@ -10,21 +10,6 @@
         .container {
             margin-top: 40px;
         }
-        .panel-heading {
-            display: inline;
-            font-weight: bold;
-        }
-        .flex-table {
-            display: table;
-        }
-        .display-tr {
-            display: table-row;
-        }
-        .display-td {
-            display: table-cell;
-            vertical-align: middle;
-            width: 55%;
-        }
     </style>
 </head>
 <body>
@@ -86,7 +71,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-danger btn-lg btn-block" type="submit">Pay Now (₹100)</button>
+                                <button class="btn btn-danger btn-lg btn-block" id="payNow" type="submit">Pay Now</button>
                             </div>
                         </div>
                     </form>
@@ -98,6 +83,8 @@
 </body>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
+    var amount  = location.search.split('amount=')[1]
+    $("#payNow").text('PAY NOW' + '  (' + amount + '$)');
     $(function() {
         var $form         = $(".validation");
         $('form.validation').bind('submit', function(e) {
@@ -145,6 +132,7 @@
                 var token = response['id'];
                 $form.find('input[type=text]').empty();
                 $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+                $form.append("<input type='hidden' name='amount' value='" + amount + "'/>");
                 $form.get(0).submit();
             }
         }

@@ -23,10 +23,10 @@ class StripeController extends Controller
     {
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
           $response = Stripe\Charge::create ([
-                  "amount" => 100 * 200,
-                  "currency" => "inr",
+                  "amount" => request('amount'),
+                  "currency" => "usd",
                   "source" => $request->stripeToken,
-                  "description" => "Making test payment of 200 ruppes."
+                  "description" => "Making test payment of 200 ruppes. Rati"
           ]);
 
       dd($response);

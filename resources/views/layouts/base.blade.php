@@ -38,7 +38,7 @@
     <link href="{{ asset('css/flag-icon.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-@stack('css')
+@stack('style')
 </head>
 
 
@@ -66,7 +66,7 @@
 
 <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
 <script src="{{ asset('js/coreui-utils.js') }}"></script>
-@stack('javascript')
+@stack('script')
 
 
 

@@ -26,5 +26,10 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/stripe', 'StripeController@handleGet');
+    Route::get('/transaction', 'TransactionController@index');
+    Route::get('/stripe', function(){
+        return view("stripe");
+    });
+
     Route::post('/stripe', 'StripeController@handlePost')->name('stripe.payment');
 });

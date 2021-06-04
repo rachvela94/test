@@ -7,9 +7,15 @@
         </div>
         <ul class="c-sidebar-nav">
             <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link c-active" href="/stripe">
+                <a class="c-sidebar-nav-link c-active" href="/home">
                     <i class="cil-speedometer c-sidebar-nav-icon"></i>
                     Dashboard
+                </a>
+            </li>
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link c-active" href="/transaction">
+                    <i class="cil-speedometer c-sidebar-nav-icon"></i>
+                    Transactions
                 </a>
             </li>
         </ul>
