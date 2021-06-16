@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get("/articles", 'ArticlesController@all');
+Route::get("/articles/{id}/comments", 'ArticlesController@comments');
+Route::get("/tags", 'ArticlesController@tags');
+Route::get("/tags/{id}/articles", 'ArticlesController@tagArticles');
