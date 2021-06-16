@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    dd(session()->all());
-    return view('welcome');
+
+
 });
 
 Auth::routes();
@@ -26,12 +26,5 @@ Auth::routes();
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/stripe', 'StripeController@handleGet');
-    Route::get('/transaction', 'TransactionController@index');
-    Route::get('/stripe', function(){
-        return view("stripe");
-    });
-    Route::post('/stripe', 'StripeController@handlePost')->name('stripe.payment');
-    Route::post('paypal', 'PaypalController@payWithpaypal');
-    Route::get('/status', 'PaypalController@getPaymentStatus')->name("status");
+
 });

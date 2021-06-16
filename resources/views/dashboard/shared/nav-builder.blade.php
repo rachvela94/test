@@ -12,11 +12,5 @@
                     Dashboard
                 </a>
             </li>
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link c-active" href="/transaction">
-                    <i class="cil-speedometer c-sidebar-nav-icon"></i>
-                    Transactions
-                </a>
-            </li>
         </ul>
         <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button></div>
